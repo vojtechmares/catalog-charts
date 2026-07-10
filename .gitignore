@@ -1,0 +1,12 @@
+# Packaged charts / release working dirs
+*.tgz
+.cr-release/
+.cr-release-packages/
+
+# Chart dependencies
+charts/**/charts/
+charts/**/Chart.lock
+
+# OS / editor
+.DS_Store
+*.swp

@@ -1,0 +1,19 @@
+# Lint and install-test changed charts on pull requests.
+name: lint-test
+
+on:
+  pull_request:
+    paths:
+      - "charts/**"
+      - "ct.yaml"
+      - ".github/workflows/lint-test.yaml"
+
+permissions:
+  contents: read
+
+jobs:
+  lint-test:
+    uses: vojtechmares/catalog-ci/.github/workflows/reusable-chart-lint-test.yaml@main
+    with:
+      charts-dir: charts
+      target-branch: main

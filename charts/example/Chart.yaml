@@ -1,0 +1,16 @@
+apiVersion: v2
+name: example
+description: A minimal, installable reference chart. Copy it as the starting point for new catalog charts.
+type: application
+# Bump `version` to trigger a release; bump `appVersion` when the packaged app changes.
+version: 0.1.0
+appVersion: "1.27.3"
+home: https://github.com/vojtechmares/catalog-charts
+sources:
+  - https://github.com/vojtechmares/catalog-charts
+maintainers:
+  - name: Vojtěch Mareš
+    email: vojtech@mares.cz
+keywords:
+  - example
+  - template

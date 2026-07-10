@@ -1,0 +1,19 @@
+---
+extends: default
+
+rules:
+  document-start: disable
+  line-length:
+    max: 120
+    allow-non-breakable-words: true
+  truthy:
+    allowed-values: ["true", "false"]
+    check-keys: false
+  comments:
+    min-spaces-from-content: 1
+
+# Helm templates are Go templates, not plain YAML - don't lint them here.
+# `ct lint` validates Chart.yaml and values.yaml.
+ignore: |
+  charts/*/templates/
+  *.tgz

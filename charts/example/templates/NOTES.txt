@@ -1,0 +1,7 @@
+{{ .Chart.Name }} {{ .Chart.Version }} has been deployed.
+
+Get the application URL by running these commands:
+
+  kubectl --namespace {{ .Release.Namespace }} port-forward svc/{{ include "example.fullname" . }} 8080:{{ .Values.service.port }}
+
+Then browse to http://127.0.0.1:8080

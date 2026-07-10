@@ -1,0 +1,26 @@
+# Package, publish and sign charts on pushes to main.
+name: release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "charts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    permissions:
+      contents: read
+      id-token: write # cosign keyless signing
+    uses: vojtechmares/catalog-ci/.github/workflows/reusable-chart-release.yaml@main
+    with:
+      charts-dir: charts
+      registry: registry.mareshq.com
+      oci-repo: catalog/charts
+    secrets:
+      registry-username: ${{ secrets.REGISTRY_USERNAME }}
+      registry-password: ${{ secrets.REGISTRY_PASSWORD }}

@@ -1,0 +1,3 @@
+# Values used by `ct install` to test this chart in CI.
+# chart-testing installs the chart once per ci/*-values.yaml file.
+replicaCount: 1
